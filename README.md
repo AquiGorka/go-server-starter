@@ -21,7 +21,7 @@ go get -v -t ./...
 
 Build (inside running container anywhere)
 ```sh
-go installgo-server-starter 
+go install go-server-starter 
 ```
 
 Execute (inside running container at /)
