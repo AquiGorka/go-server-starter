@@ -2,4 +2,6 @@ language: go
 go: 
    - 1.8
 
-script: ./src/scripts/test.sh
+script:
+  - cd ./src
+  - ./scripts/test.sh
