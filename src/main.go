@@ -2,7 +2,7 @@ package main
 
 import(
   "os"
-  "go-server-starter/server"
+  "github.com/AquiGorka/go-server-starter/src/server"
   "gopkg.in/kataras/iris.v6"
 )
 
