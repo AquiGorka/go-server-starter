@@ -15,7 +15,6 @@ func TestMain(m *testing.M) {
   app := iris.New()
   app = server.HttpServer(app)
   app = server.WebsocketServer(app)
-  app.Configure(iris.WithoutBanner)
   go app.Run(iris.Addr(":" + os.Getenv("APP_PORT")))
   // tests
   code := m.Run()
