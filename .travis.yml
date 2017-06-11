@@ -1,7 +1,9 @@
 language: go
+sudo: false
 go: 
-   - 1.8
-
+   - tip
+before_install:
+    - go get github.com/mattn/goveralls
 script:
-  - cd ./src
-  - ./scripts/test.sh
+  - export APP_PORT=8080
+  - $HOME/gopath/bin/goveralls -service=travis-ci
