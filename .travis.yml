@@ -1,9 +1,9 @@
 language: go
 sudo: false
 go: 
-   - tip
+  - 1.8.x
 before_install:
     - go get github.com/mattn/goveralls
 script:
-  - export APP_PORT=8080
+  - ./scr/scripts/env.sh
   - $HOME/gopath/bin/goveralls -service=travis-ci
