@@ -1,17 +1,13 @@
 package server
 
 import (
-  "gopkg.in/kataras/iris.v6"
-  "gopkg.in/kataras/iris.v6/adaptors/httprouter"
-  "gopkg.in/kataras/iris.v6/middleware/logger"
-  "gopkg.in/kataras/iris.v6/adaptors/websocket"
+  "github.com/kataras/iris"
+  "github.com/kataras/iris/websocket"
+  "github.com/kataras/iris/middleware/logger"
+  "github.com/kataras/iris/context"
 )
 
-func HttpServer(app *iris.Framework) *iris.Framework{
-  // dev logger
-  app.Adapt(iris.DevLogger())
-  // router
-  app.Adapt(httprouter.New())
+func HttpServer(app *iris.Application) *iris.Application{
   // request logger
   customLogger := logger.New(logger.Config{
     Status: true,
@@ -21,8 +17,8 @@ func HttpServer(app *iris.Framework) *iris.Framework{
   })
   app.Use(customLogger)
   // 404
-  app.OnError(iris.StatusNotFound, func(ctx *iris.Context) {
-    customLogger.Serve(ctx)
+  app.OnErrorCode(iris.StatusNotFound, func(ctx context.Context) {
+    customLogger(ctx)
     notFoundHandler(ctx)
   })
   // ping
@@ -31,7 +27,7 @@ func HttpServer(app *iris.Framework) *iris.Framework{
   return app
 }
 
-func WebsocketServer(app *iris.Framework) *iris.Framework{
+func WebsocketServer(app *iris.Application) *iris.Application{
   // endpoint
   ws := websocket.New(websocket.Config{
     Endpoint: "/ws",
@@ -39,7 +35,7 @@ func WebsocketServer(app *iris.Framework) *iris.Framework{
   // connection handler
   ws.OnConnection(onConnectionHandler)
   // websocket
-  app.Adapt(ws)
+  ws.Attach(app)
   //
   return app
 }

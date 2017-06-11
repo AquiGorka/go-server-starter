@@ -1,7 +1,7 @@
 package server
 
 import(
-  "gopkg.in/kataras/iris.v6/adaptors/websocket"
+  "github.com/kataras/iris/websocket"
 )
 
 func onConnectionHandler(c websocket.Connection) {

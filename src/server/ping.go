@@ -1,10 +1,12 @@
 package server
 
 import (
-  "gopkg.in/kataras/iris.v6"
+  "github.com/kataras/iris"
+  "github.com/kataras/iris/context"
 )
 
-func pingHandler(ctx *iris.Context) {
-  ctx.HTML(iris.StatusOK, "pong")
+func pingHandler(ctx context.Context) {
+  ctx.StatusCode(iris.StatusOK)
+  ctx.HTML("pong")
 }
 

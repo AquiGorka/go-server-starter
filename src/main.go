@@ -3,7 +3,7 @@ package main
 import(
   "os"
   "github.com/AquiGorka/go-server-starter/src/server"
-  "gopkg.in/kataras/iris.v6"
+  "github.com/kataras/iris"
 )
 
 func main() {
@@ -13,5 +13,5 @@ func main() {
   // websocket server
   app = server.WebsocketServer(app)
   //
-  app.Listen(":" + os.Getenv("APP_PORT"))
+  app.Run(iris.Addr(":" + os.Getenv("APP_PORT")))
 }

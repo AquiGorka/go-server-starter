@@ -3,7 +3,7 @@ package server_test
 import (
   "testing"
   "os"
-  "gopkg.in/kataras/iris.v6"
+  "github.com/kataras/iris"
   "github.com/AquiGorka/go-server-starter/src/server"
   "golang.org/x/net/websocket"
   "net/http"
@@ -15,7 +15,8 @@ func TestMain(m *testing.M) {
   app := iris.New()
   app = server.HttpServer(app)
   app = server.WebsocketServer(app)
-  go app.Listen(":" + os.Getenv("APP_PORT"))
+  app.Configure(iris.WithoutBanner)
+  go app.Run(iris.Addr(":" + os.Getenv("APP_PORT")))
   // tests
   code := m.Run()
   // stop the server

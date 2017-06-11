@@ -1,9 +1,11 @@
 package server
 
 import (
-  "gopkg.in/kataras/iris.v6"
+  "github.com/kataras/iris"
+  "github.com/kataras/iris/context"
 )
 
-func notFoundHandler(ctx *iris.Context) {
-  ctx.HTML(iris.StatusNotFound, "404")
+func notFoundHandler(ctx context.Context) {
+  ctx.StatusCode(iris.StatusNotFound)
+  ctx.HTML("404")
 }
