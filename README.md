@@ -6,7 +6,7 @@ This repo provides a starting point to develop a backend server with Go. It reli
 
 Run container (from this repo at /)
 ```sh
-./src/scripts/docker.sh
+./scripts/docker.sh
 ```
 
 This will run the golang image and mount the source code and lib dir (will be created the first time you install dependencies) into the container - the lib dir is gitignored as it is the place where all the dependencies will be stored locally - think of it as a node_modules dir; it doesn't get committed and you do not have to install all dependencies everytime you run the container.
