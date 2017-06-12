@@ -3,11 +3,13 @@ package server_test
 import (
   "testing"
   "os"
-  "github.com/kataras/iris"
-  "github.com/AquiGorka/go-server-starter/src/server"
-  "golang.org/x/net/websocket"
   "net/http"
   "context"
+
+  "github.com/AquiGorka/go-server-starter/server"
+
+  "github.com/kataras/iris"
+  "golang.org/x/net/websocket"
 )
 
 func TestMain(m *testing.M) {
