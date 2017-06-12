@@ -5,5 +5,5 @@ go:
 before_install:
     - go get github.com/mattn/goveralls
 script:
-  - . ./src/scripts/env.sh
+  - . ./scripts/env.sh
   - $HOME/gopath/bin/goveralls -service=travis-ci

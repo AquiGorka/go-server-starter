@@ -11,20 +11,22 @@ Run container (from this repo at /)
 
 This will run the golang image and mount the source code and lib dir (will be created the first time you install dependencies) into the container - the lib dir is gitignored as it is the place where all the dependencies will be stored locally - think of it as a node_modules dir; it doesn't get committed and you do not have to install all dependencies everytime you run the container.
 
-When the container is running and the app is running it exposes the http server to http://localhost:8877
+When the container is running and the app is running it exposes the server to http://localhost:8877
 
-Install dependencies (inside running container at /)
+Install dependencies (inside running container at ...go-server-starter/)
 ```sh
 # -t installs testing dependencies
 go get -v -t ./...
 ```
 
-Build (inside running container anywhere)
+Build (inside running container at ...go-server-starter/)
 ```sh
-go install go-server-starter 
+go install
+# run
+go-server-starter
 ```
 
-Execute (inside running container at /)
+Execute (inside running container at ...go-server-starter/)
 ```sh
 ./scripts/run.sh
 ```
@@ -34,8 +36,7 @@ Enter running container if needed
 docker exec -it go-server-starter /bin/bash
 ```
 
-Tests (inside running container at /)
+Tests (inside running container at ...go-server-starter/)
 ```sh
 ./scripts/test.sh
 ```
-
