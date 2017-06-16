@@ -66,7 +66,7 @@ func TestOnConnectionHandler(t *testing.T) {
     }
     err = c.Dial(wsEndpoint, "")
     if err != nil {
-      t.Error("Client error connectiong to socket server: ", err)
+      t.Error("Client error connecting to socket server: ", err)
     }
     c.Send(evtwebsocket.Msg{
       Body : []byte(pingMsg),
