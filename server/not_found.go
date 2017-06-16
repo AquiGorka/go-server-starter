@@ -1,8 +1,8 @@
 package server
 
 import (
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/context"
+	"github.com/go-speedo/go-speedo"
+	"github.com/go-speedo/go-speedo/context"
 )
 
 func notFoundHandler(ctx context.Context) {

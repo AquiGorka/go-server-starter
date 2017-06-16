@@ -2,27 +2,24 @@ package server_test
 
 import (
 	"context"
+	"github.com/AquiGorka/go-server-starter/server"
+	"github.com/go-speedo/go-speedo"
+	"golang.org/x/net/websocket"
 	"net/http"
 	"os"
 	"testing"
-
-	"github.com/AquiGorka/go-server-starter/server"
-
-	"github.com/kataras/iris"
-	"golang.org/x/net/websocket"
 )
 
 func TestMain(m *testing.M) {
 	// run the server
 	app := iris.New()
-	app = server.HttpServer(app)
+	app = server.HTTPServer(app)
 	app = server.WebsocketServer(app)
 	go app.Run(iris.Addr(":" + os.Getenv("APP_PORT")))
 	// tests
 	code := m.Run()
 	// stop the server
-	ctx, _ := context.WithCancel(context.Background())
-	app.Shutdown(ctx)
+	app.Shutdown(context.Background())
 	// fin
 	os.Exit(code)
 }

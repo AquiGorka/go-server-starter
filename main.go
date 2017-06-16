@@ -2,14 +2,14 @@ package main
 
 import (
 	"github.com/AquiGorka/go-server-starter/server"
-	"github.com/kataras/iris"
+	"github.com/go-speedo/go-speedo"
 	"os"
 )
 
 func main() {
 	app := iris.New()
 	// http server
-	app = server.HttpServer(app)
+	app = server.HTTPServer(app)
 	// websocket server
 	app = server.WebsocketServer(app)
 	//

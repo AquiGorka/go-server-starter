@@ -1,13 +1,14 @@
 package server
 
 import (
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/context"
-	"github.com/kataras/iris/middleware/logger"
-	"github.com/kataras/iris/websocket"
+	"github.com/go-speedo/go-speedo"
+	"github.com/go-speedo/go-speedo/context"
+	"github.com/go-speedo/go-speedo/middleware/logger"
+	"github.com/go-speedo/go-speedo/websocket"
 )
 
-func HttpServer(app *iris.Application) *iris.Application {
+// HTTPServer enhances an iris app to accept http requests
+func HTTPServer(app *iris.Application) *iris.Application {
 	// request logger
 	customLogger := logger.New(logger.Config{
 		Status: true,
@@ -27,6 +28,7 @@ func HttpServer(app *iris.Application) *iris.Application {
 	return app
 }
 
+// WebsocketServer enhances an iris app to accept websocket connections
 func WebsocketServer(app *iris.Application) *iris.Application {
 	// endpoint
 	ws := websocket.New(websocket.Config{
