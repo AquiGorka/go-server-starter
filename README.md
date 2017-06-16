@@ -1,4 +1,4 @@
-# Go server starter [![Build Status](https://travis-ci.org/AquiGorka/go-server-starter.svg?branch=master)](https://travis-ci.org/AquiGorka/go-server-starter) [![Coverage Status](https://coveralls.io/repos/github/AquiGorka/go-server-starter/badge.svg?branch=master)](https://coveralls.io/github/AquiGorka/go-server-starter?branch=master)
+# Go server starter [![Build Status](https://travis-ci.org/AquiGorka/go-server-starter.svg?branch=master)](https://travis-ci.org/AquiGorka/go-server-starter) [![Coverage Status](https://coveralls.io/repos/github/AquiGorka/go-server-starter/badge.svg?branch=master)](https://coveralls.io/github/AquiGorka/go-server-starter?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/AquiGorka/go-server-starter)](https://goreportcard.com/report/github.com/AquiGorka/go-server-starter)
 
 This repo provides a starting point to develop a backend server with Go. It relies on the Iris Framework for http and socket servers. The tests actually run the server and test against both ping endpoints.
 
