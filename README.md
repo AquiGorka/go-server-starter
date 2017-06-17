@@ -2,7 +2,7 @@
 
 This repo provides a starting point to develop a backend server with Go. It relies on the Iris Framework for http and socket servers. The tests actually run the server and test against both ping endpoints.
 
-## Go getable
+## Go getable
 ```sh
 go get github.com/AquiGorka/go-server-starter
 ```
