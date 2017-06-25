@@ -14,7 +14,7 @@ Run container (from this repo at /)
 ./scripts/docker.sh
 ```
 
-This will run the golang image and mount the source code and lib dir (will be created the first time you install dependencies) into the container - the lib dir is gitignored as it is the place where all the dependencies will be stored locally - think of it as a node_modules dir; it doesn't get committed and you do not have to install all dependencies everytime you run the container.
+This will run the golang image and mount the source code and pkg dir (will be created the first time you install dependencies) into the container - the pkg dir is gitignored as it is the place where all the dependencies will be stored locally - think of it as a node_modules dir; it doesn't get committed and you do not have to install all dependencies everytime you run the container.
 
 When the container is running and the app is running it exposes the server to http://localhost:8877
 
